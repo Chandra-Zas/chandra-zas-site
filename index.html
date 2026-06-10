@@ -95,9 +95,9 @@
   .video-frame{position:relative;max-width:760px;margin:26px auto 0;border-radius:20px;overflow:hidden;border:1px solid #e2d2b9;box-shadow:0 22px 60px rgba(120,90,70,.14);aspect-ratio:16/9;background:#1a1714}
   .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .video-poster{position:absolute;inset:0;width:100%;height:100%;border:0;cursor:pointer;background-size:cover;background-position:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
-  .video-poster::after{content:"";position:absolute;inset:0;background:rgba(30,24,20,.28)}
+  .video-poster::after{content:"";position:absolute;inset:0;background:rgba(247,239,226,.34)}
   .video-poster .play{position:relative;z-index:1;width:74px;height:74px;border-radius:50%;background:rgba(28,171,176,.95);display:flex;align-items:center;justify-content:center}
-  .video-poster .cap{position:relative;z-index:1;font-family:var(--font-eyebrow);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#fff}
+  .video-poster .cap{position:relative;z-index:1;font-family:var(--font-eyebrow);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#2c2825;text-shadow:0 1px 4px rgba(247,240,228,.8)}
   /* SECTIONS */
   section.block{padding:80px 0;text-align:center}
   .band{background:var(--cream)}
@@ -129,7 +129,7 @@
   .offer .go{display:inline-block;margin-top:14px;font-family:var(--font-ui);font-size:13.5px;color:var(--teal-deep);text-decoration:none}
   .book-img{border-radius:14px;overflow:hidden;box-shadow:0 22px 52px rgba(120,90,70,.26);border:1px solid #e6d6bd;transition:transform .3s ease,box-shadow .3s ease}
   .book-img:hover{transform:translateY(-6px);box-shadow:0 32px 66px rgba(120,90,70,.32)}
-  .book-img img{width:100%;display:block}
+  .book-img img{width:100%;height:auto;display:block}
   .soon-items{display:flex;gap:40px;flex-wrap:wrap;margin-top:6px}
   .soon-items div{flex:1;min-width:200px}
   .soon-items h4{font-family:var(--font-display);font-weight:500;font-size:17px}
@@ -139,7 +139,8 @@
   .soon-num{font-family:var(--font-eyebrow);font-size:11px;letter-spacing:.24em;color:var(--rose-deep)}
   .soon-card h3{font-family:var(--font-display);font-weight:600;font-size:19px;margin-top:8px}
   .soon-card p{font-size:15px;color:#5a544c;margin-top:6px}
-  .signup{margin:40px auto 0;max-width:440px}
+  .signup{margin:22px auto 0;max-width:440px}
+  #coming-soon{padding-top:62px;padding-bottom:50px}
   .signup-head{font-family:var(--font-display);font-weight:600;font-size:20px;text-align:center;margin-bottom:6px}
   .signup-label{font-size:15px;color:#4d473f;margin-bottom:14px;text-align:center}
   .signup-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
@@ -147,15 +148,19 @@
   .signup-form button{padding:13px 26px;border:0;border-radius:999px;background:var(--teal);color:#fff;font-family:var(--font-ui);font-weight:600;letter-spacing:.06em;font-size:14px;cursor:pointer}
   .signup-note{font-size:12.5px;color:#8c857b;margin-top:10px}
   .faq{max-width:640px;margin:12px auto 0;text-align:left}
-  .faq-item{padding:24px 0;border-top:1px solid rgba(201,162,39,.4)}
-  .faq-item h3{font-family:var(--font-display);font-weight:600;font-size:18px}
-  .faq-item p{font-size:16px;color:#534d45;margin-top:8px;line-height:1.7}
+  .faq-item{border-top:1px solid rgba(201,162,39,.4)}
+  .faq-item summary{cursor:pointer;list-style:none;font-family:var(--font-display);font-weight:600;font-size:18px;padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"+";color:var(--teal-deep);font-weight:400;font-size:24px;line-height:1}
+  .faq-item[open] summary::after{content:"–"}
+  .faq-item p{font-size:16px;color:#534d45;margin:0 0 22px;line-height:1.7}
   /* FOOTER over the banner image */
   .footer-banner{position:relative;z-index:1;min-height:560px;display:flex;align-items:flex-end;justify-content:center;text-align:center;
     background:url('assets/author-coach-guide.webp') center/cover no-repeat}
   .footer-scrim{position:absolute;inset:0;z-index:0;background:linear-gradient(to bottom, rgba(30,24,20,0) 42%, rgba(26,20,16,.72) 100%)}
   .footer-content{position:relative;z-index:1;padding:0 24px 44px}
-  .footer-cta{display:inline-block;font-family:var(--font-ui);font-size:14px;font-weight:600;letter-spacing:.05em;color:#fff;text-decoration:none;border-radius:999px;padding:13px 30px;margin-bottom:22px;background:var(--teal)}
+  .prefooter{text-align:center;padding:52px 24px 58px;background:var(--cream)}
+  .btn-talk{display:inline-block;font-family:var(--font-ui);font-size:15px;font-weight:600;letter-spacing:.05em;color:#fff;background:var(--teal);border-radius:999px;padding:16px 34px;text-decoration:none}
   .ftag{font-family:var(--font-display);font-size:15px;color:#fff;letter-spacing:.06em}
   .social{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:16px;font-family:var(--font-eyebrow);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#f1e6d6}
   .social a{color:inherit;text-decoration:none}
@@ -337,18 +342,18 @@
       <h2>Frequently asked questions</h2>
       <div class="rule c"></div>
       <div class="faq">
-        <div class="faq-item">
-          <h3>Who is Chandra Zas?</h3>
+        <details class="faq-item">
+          <summary>Who is Chandra Zas?</summary>
           <p>Chandra Zas is a somatic coach, author, and the Book Momma of the <em>Handbook for Human Potential</em>. She helps people heal, grow, and transform, moving from inherited patterns to presence through somatic coaching, the Mood Before Food method, and nervous-system work. Based in Reno, Nevada, she works with clients through Zen Odyssey.</p>
-        </div>
-        <div class="faq-item">
-          <h3>What is a somatic coach?</h3>
+        </details>
+        <details class="faq-item">
+          <summary>What is a somatic coach?</summary>
           <p>A somatic coach helps you work with the body, not only the mind. Rather than trying to think your way out of stress, cravings, or reactive patterns, somatic coaching helps you regulate your nervous system and listen to your body's signals, so lasting change becomes possible.</p>
-        </div>
-        <div class="faq-item">
-          <h3>How can I work with Chandra Zas?</h3>
+        </details>
+        <details class="faq-item">
+          <summary>How can I work with Chandra Zas?</summary>
           <p>You can book a call with Chandra and explore her coaching, courses, and the Zen Odyssey Studio at <a href="https://zenodyssey.com" target="_blank" rel="noopener">zenodyssey.com</a>. You can also read her work in the <em>Handbook for Human Potential</em>.</p>
-        </div>
+        </details>
       </div>
     </div>
   </section>
@@ -360,11 +365,15 @@
   ]}
   </script>
 
+  <!-- PRE-FOOTER CTA -->
+  <section class="prefooter">
+    <a class="btn-talk" href="https://CoachChandra.as.me/" target="_blank" rel="noopener">Book a talk with me ↗</a>
+  </section>
+
   <!-- FOOTER over the banner image -->
   <footer class="footer-banner">
     <div class="footer-scrim"></div>
     <div class="footer-content">
-      <a class="footer-cta" href="https://CoachChandra.as.me/" target="_blank" rel="noopener">Book a talk with me ↗</a>
       <div class="social">
         <a href="https://www.instagram.com/chandrazas/" target="_blank" rel="noopener">Instagram ↗</a>
         <a href="https://www.youtube.com/@chandrazas" target="_blank" rel="noopener">YouTube ↗</a>
