@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#f7efe2" />
 <title>Chandra Zas — Somatic Coach, Author & Guide</title>
 <meta name="description" content="Chandra Zas is a somatic coach, author, and Book Momma of the Handbook for Human Potential — helping people heal, grow, and transform, from patterns to presence." />
 <link rel="canonical" href="https://chandrazas.com/" />
@@ -22,7 +23,8 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:ital,wght@0,400;0,500;0,600;1,500;1,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:ital,wght@0,400;0,500;0,600;1,500;1,600&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:ital,wght@0,400;0,500;0,600;1,500;1,600&display=swap" /></noscript>
 <style>
   :root{
     --teal:#1cabb0; --teal-deep:#2d7d7d; --gold:#c9a227;
@@ -45,9 +47,9 @@
   .sec-marble::before,.sec-fern::before,.sec-hearts::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0}
   .sec-marble::before{background:url('assets/texture-flow-2.png') center/cover no-repeat;opacity:.40}
   .sec-fern::before{background:url('assets/texture-plant-2.png') repeat;background-size:460px;opacity:.92}
-  .sec-hearts::before{background:url('assets/texture-hearts.png') center/cover no-repeat;opacity:.55}
+  .sec-hearts::before{background:url('assets/texture-hearts.webp') center/cover no-repeat;opacity:.55}
   .sec-marble>*,.sec-fern>*,.sec-hearts>*{position:relative;z-index:1}
-  .sec-enso{background:var(--cream) url('assets/enso-faint.png') no-repeat center;background-size:760px}
+  .sec-enso{background:var(--cream) url('assets/enso-faint.webp') no-repeat center;background-size:760px}
   .sec-photo-heal{position:relative;background-color:var(--cream)}
   .sec-photo-heal::before{content:"";position:absolute;inset:0;background:url('assets/helping-humans-heal.webp') center 20%/cover no-repeat;z-index:0}
   .sec-photo-heal::after{content:"";position:absolute;inset:0;background:rgba(247,239,226,.82);z-index:0}
@@ -144,6 +146,10 @@
   .signup-form input{flex:1;min-width:200px;padding:13px 16px;border:1px solid #d8c6ac;border-radius:999px;font-family:var(--font-serif);font-size:15px;background:#fff;color:var(--ink)}
   .signup-form button{padding:13px 26px;border:0;border-radius:999px;background:var(--teal);color:#fff;font-family:var(--font-ui);font-weight:600;letter-spacing:.06em;font-size:14px;cursor:pointer}
   .signup-note{font-size:12.5px;color:#8c857b;margin-top:10px}
+  .faq{max-width:640px;margin:12px auto 0;text-align:left}
+  .faq-item{padding:24px 0;border-top:1px solid rgba(201,162,39,.4)}
+  .faq-item h3{font-family:var(--font-display);font-weight:600;font-size:18px}
+  .faq-item p{font-size:16px;color:#534d45;margin-top:8px;line-height:1.7}
   /* FOOTER over the banner image */
   .footer-banner{position:relative;z-index:1;min-height:560px;display:flex;align-items:flex-end;justify-content:center;text-align:center;
     background:url('assets/author-coach-guide.webp') center/cover no-repeat}
@@ -183,7 +189,7 @@
   <!-- FIXED NAV (freezes on scroll) -->
   <header class="nav" id="nav">
     <div class="wrap nav-bar">
-      <a class="mark" href="#top"><img class="mark-enso" src="assets/zen-odyssey-enso.png" alt="Zen Odyssey" />Chandra <span>Zas</span></a>
+      <a class="mark" href="#top"><img class="mark-enso" src="assets/zen-odyssey-enso-sm.webp" alt="Zen Odyssey" width="26" height="26" />Chandra <span>Zas</span></a>
       <nav class="nav-links">
         <a href="#about">About</a><a href="#mission">Mission</a><a href="#next">Grow</a><a href="https://zenodyssey.com/coaching/" target="_blank" rel="noopener">Coaching ↗</a>
       </nav>
@@ -205,7 +211,7 @@
         </div>
         <div class="hero-img">
           <div class="frame">
-            <img src="assets/chandra-hero.webp" alt="Chandra Zas" />
+            <img src="assets/chandra-hero.webp" alt="Chandra Zas, somatic coach and author" width="680" height="907" decoding="async" />
           </div>
         </div>
       </div>
@@ -215,7 +221,7 @@
   <!-- WELCOME VIDEO -->
   <section class="video-sec sec-plain" id="welcome">
     <div class="wrap">
-      <span class="eyebrow">A short welcome video from Chandra Zas</span>
+      <h2 class="eyebrow">A short welcome video from Chandra Zas</h2>
       <div class="video-frame" id="videoFrame">
         <button class="video-poster" id="videoPoster"
           data-embed="https://www.youtube.com/embed/_K7EQZ89ysI?autoplay=1&rel=0"
@@ -238,9 +244,9 @@
     </div>
     <div class="wrap">
       <div class="triptych">
-        <figure><img src="assets/peaceful-parenting.webp" alt="Chandra Zas with her daughter" /></figure>
-        <figure><img src="assets/mother-daughter.webp" alt="Chandra Zas and family" /></figure>
-        <figure><img src="assets/my-man.webp" alt="Chandra Zas's partner" /></figure>
+        <figure><img src="assets/peaceful-parenting.webp" alt="Chandra Zas with her daughter" width="640" height="853" loading="lazy" decoding="async" /></figure>
+        <figure><img src="assets/mother-daughter.webp" alt="Chandra Zas with her family" width="640" height="853" loading="lazy" decoding="async" /></figure>
+        <figure><img src="assets/my-man.webp" alt="Chandra Zas and her partner" width="640" height="853" loading="lazy" decoding="async" /></figure>
       </div>
       <p class="narrow" style="margin:34px auto 0">I'm most complimented for my parenting. And… I'm far from perfect. I have plenty of my own struggles that I'm still healing and growing through.</p>
     </div>
@@ -256,7 +262,7 @@
   <!-- MISSION -->
   <section class="block sec-hearts" id="mission">
     <div class="narrow">
-      <span class="eyebrow">My Mission</span>
+      <h2 class="eyebrow">My Mission</h2>
       <div class="rule c"></div>
       <p>I believe we are at a pivotal moment in human consciousness. Every one of us who can help move the needle, for our own growth and for our collective evolution, matters now more than ever. That is the difference I am here to make.</p>
     </div>
@@ -265,7 +271,7 @@
   <!-- THE ADVENTURE OF AWARENESS + POEM -->
   <section class="block sec-photo-heal" id="awareness">
     <div class="narrow">
-      <span class="eyebrow">The Adventure of Awareness</span>
+      <h2 class="eyebrow">The Adventure of Awareness</h2>
       <div class="rule c"></div>
       <p class="quote">Awareness is the first step. Love is the next.</p>
       <p>Meet what you find in yourself with compassion instead of shame, and change from there, because change made with love is the kind that lasts.</p>
@@ -287,11 +293,11 @@
             <p>My home for working together: somatic coaching, the Mood Before Food method, and parenting support for those ready to move from patterns to presence. Join the Zen Odyssey Studio to grow with recorded content, on your own time.</p>
             <a class="go" href="https://zenodyssey.com" target="_blank" rel="noopener">Visit Zen Odyssey ↗</a>
           </div>
-          <div class="book-img"><img src="assets/zen-odyssey-thumb.webp" alt="Chandra Zas leading a Zen Odyssey somatic embodiment session" /></div>
+          <div class="book-img"><img src="assets/zen-odyssey-thumb.webp" alt="Chandra Zas leading a Zen Odyssey somatic embodiment session" width="480" height="480" loading="lazy" decoding="async" /></div>
         </div>
 
         <div class="entry feature">
-          <div class="book-img"><img src="assets/handbook-book.webp" alt="Handbook for Human Potential, compiled and edited by Chandra Zas" /></div>
+          <div class="book-img"><img src="assets/handbook-book.webp" alt="Handbook for Human Potential, compiled and edited by Chandra Zas" width="480" height="480" loading="lazy" decoding="async" /></div>
           <div>
             <span class="kicker">An accessible guide to personal growth</span>
             <h3><em>Handbook for Human Potential</em></h3>
@@ -334,6 +340,36 @@
       </div>
     </div>
   </section>
+
+  <!-- FAQ -->
+  <section class="block sec-plain" id="faq">
+    <div class="narrow">
+      <span class="eyebrow">Questions</span>
+      <h2>Frequently asked questions</h2>
+      <div class="rule c"></div>
+      <div class="faq">
+        <div class="faq-item">
+          <h3>Who is Chandra Zas?</h3>
+          <p>Chandra Zas is a somatic coach, author, and the Book Momma of the <em>Handbook for Human Potential</em>. She helps people heal, grow, and transform, moving from inherited patterns to presence through somatic coaching, the Mood Before Food method, and nervous-system work. Based in Reno, Nevada, she works with clients through Zen Odyssey.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is a somatic coach?</h3>
+          <p>A somatic coach helps you work with the body, not only the mind. Rather than trying to think your way out of stress, cravings, or reactive patterns, somatic coaching helps you regulate your nervous system and listen to your body's signals, so lasting change becomes possible.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How can I work with Chandra Zas?</h3>
+          <p>You can book a call with Chandra and explore her coaching, courses, and the Zen Odyssey Studio at <a href="https://zenodyssey.com" target="_blank" rel="noopener">zenodyssey.com</a>. You can also read her work in the <em>Handbook for Human Potential</em>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Who is Chandra Zas?","acceptedAnswer":{"@type":"Answer","text":"Chandra Zas is a somatic coach, author, and the Book Momma of the Handbook for Human Potential. She helps people heal, grow, and transform, moving from inherited patterns to presence through somatic coaching, the Mood Before Food method, and nervous-system work. Based in Reno, Nevada, she works with clients through Zen Odyssey."}},
+  {"@type":"Question","name":"What is a somatic coach?","acceptedAnswer":{"@type":"Answer","text":"A somatic coach helps you work with the body, not only the mind. Rather than trying to think your way out of stress, cravings, or reactive patterns, somatic coaching helps you regulate your nervous system and listen to your body's signals, so lasting change becomes possible."}},
+  {"@type":"Question","name":"How can I work with Chandra Zas?","acceptedAnswer":{"@type":"Answer","text":"You can book a call with Chandra and explore her coaching, courses, and the Zen Odyssey Studio at zenodyssey.com. You can also read her work in the Handbook for Human Potential."}}
+  ]}
+  </script>
 
   <!-- FOOTER over the banner image -->
   <footer class="footer-banner">
