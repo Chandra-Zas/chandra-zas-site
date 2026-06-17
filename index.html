@@ -174,6 +174,21 @@
      presentation (\FE0E) so iOS shows a thin arrow, not a big gray emoji. */
   a[target="_blank"]::after{content:"\2197\FE0E";font-size:.7em;margin-left:.25em;opacity:.7}
   .fine a[target="_blank"]::after{opacity:.6}
+  /* 2026-06-16 — booking popup. These links open the Acuity scheduler in an
+     in-page modal (not off-site), so suppress the external ↗ arrow on them. */
+  a[data-booking-open][target="_blank"]::after{content:none}
+  /* Booking modal — mirrors the zenodyssey.com popup; same scheduler embed. */
+  .booking-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:24px}
+  .booking-modal[hidden]{display:none}
+  .booking-modal__overlay{position:absolute;inset:0;background:rgba(26,20,16,.62);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+  .booking-modal__dialog{position:relative;z-index:1;width:100%;max-width:720px;height:min(86vh,860px);background:var(--paper);border:1px solid var(--gold);border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(40,28,20,.45)}
+  .booking-modal__close{position:absolute;top:6px;right:12px;z-index:2;width:42px;height:42px;border:0;background:transparent;color:var(--teal-deep);font-family:var(--font-ui);font-size:30px;line-height:1;cursor:pointer}
+  .booking-modal__frame{width:100%;height:100%;border:0;display:block;background:var(--paper)}
+  body.booking-open{overflow:hidden}
+  @media(max-width:560px){
+    .booking-modal{padding:0}
+    .booking-modal__dialog{max-width:none;height:100%;border-radius:0;border:0}
+  }
   @media(max-width:820px){
     .hero,.triptych{grid-template-columns:1fr}
     .triptych{max-width:360px;margin:36px auto 0}
@@ -221,7 +236,7 @@
           <p class="subtag">Somatic Coach · Author · Guide</p>
           <div class="rule"></div>
           <p class="lead">My personal and professional mission is to help raise our collective consciousness through personal growth. That's why I have my coaching practice, and it's why I birthed the <em>Handbook for Human Potential</em> into the world.</p>
-          <a class="hero-link" href="https://CoachChandra.as.me/" target="_blank" rel="noopener">Book a talk with me</a>
+          <a class="hero-link" href="https://CoachChandra.as.me/" target="_blank" rel="noopener" data-booking-open>Book a talk with me</a>
         </div>
         <div class="hero-img">
           <div class="frame">
@@ -373,9 +388,18 @@
   ]}
   </script>
 
+  <!-- BOOKING POPUP (Acuity scheduler in an in-page modal) -->
+  <div class="booking-modal" data-booking-modal hidden>
+    <div class="booking-modal__overlay" data-booking-close></div>
+    <div class="booking-modal__dialog" role="dialog" aria-modal="true" aria-label="Book a talk with Chandra Zas">
+      <button class="booking-modal__close" type="button" aria-label="Close booking" data-booking-close>&times;</button>
+      <iframe class="booking-modal__frame" title="Schedule a talk with Chandra Zas" data-booking-frame src="about:blank" loading="lazy"></iframe>
+    </div>
+  </div>
+
   <!-- PRE-FOOTER CTA -->
   <section class="prefooter">
-    <a class="btn-talk" href="https://CoachChandra.as.me/" target="_blank" rel="noopener">Book a talk with me</a>
+    <a class="btn-talk" href="https://CoachChandra.as.me/" target="_blank" rel="noopener" data-booking-open>Book a talk with me</a>
   </section>
 
   <!-- FOOTER over the banner image -->
@@ -430,6 +454,41 @@
       } else {
         loadFlodesk();
       }
+    })();
+
+    // 2026-06-16 — Booking popup. "Book a talk with me" opens the Acuity
+    // scheduler in an in-page modal so visitors never leave the site. Mirrors
+    // the zenodyssey.com popup and uses the same scheduler embed. Modifier or
+    // middle clicks fall through to the link (Acuity in a new tab) as a no-JS
+    // fallback.
+    (function(){
+      var EMBED = 'https://app.acuityscheduling.com/schedule.php?owner=18474262&ref=embedded_csp';
+      var modal = document.querySelector('[data-booking-modal]');
+      var frame = document.querySelector('[data-booking-frame]');
+      if (!modal || !frame) return;
+      function openBooking(){
+        if (frame.getAttribute('src') !== EMBED) frame.setAttribute('src', EMBED);
+        modal.hidden = false;
+        document.body.classList.add('booking-open');
+      }
+      function closeBooking(){
+        modal.hidden = true;
+        document.body.classList.remove('booking-open');
+      }
+      var links = document.querySelectorAll('a[href*="as.me"], a[href*="acuityscheduling.com"], [data-booking-open]');
+      links.forEach(function(el){
+        el.addEventListener('click', function(e){
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+          e.preventDefault();
+          openBooking();
+        });
+      });
+      document.querySelectorAll('[data-booking-close]').forEach(function(el){
+        el.addEventListener('click', closeBooking);
+      });
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape' && !modal.hidden) closeBooking();
+      });
     })();
   </script>
 </body>
