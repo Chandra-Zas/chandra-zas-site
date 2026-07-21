@@ -1607,6 +1607,26 @@
       "source": "/wp-content/uploads/GutHealthforKids2021.pdf",
       "destination": "https://zenodyssey.com/downloads/gut-health-for-kids.pdf",
       "permanent": true
+    },
+    {
+      "source": "/how-you-can-connect-to-and-reclaim-your-body-wisdom/",
+      "destination": "https://zenodyssey.com/blog/body-wisdom/",
+      "permanent": true
+    },
+    {
+      "source": "/understanding-how-food-psychology-affects-what-we-eat/",
+      "destination": "https://zenodyssey.com/food-psychology/",
+      "permanent": true
+    },
+    {
+      "source": "/home/",
+      "destination": "https://zenodyssey.com/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:page(\\d+)/",
+      "destination": "https://zenodyssey.com/blog/",
+      "permanent": true
     }
   ]
 }
